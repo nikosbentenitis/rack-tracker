@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script>
 dataLayer.push({
-  <%= events.map(&:write).join(', ') %>
+  <%= events.map(&:write).join(', ').gsub("'{", "{").gsub("}'", "}") %>
 });
 </script>
 <% end %>
